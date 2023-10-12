@@ -34,6 +34,9 @@ int main() {
           //}
           uart_print("Button is pressed\n",19);
         }
+           while ((PIND & (1 << PD2)) == 0) {
+            // do nothing
+          }
         // Send "Button is pressed" message char by char
     
         if (uart_recieve_ready()) {
