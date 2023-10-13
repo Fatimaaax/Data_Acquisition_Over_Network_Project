@@ -17,9 +17,10 @@ This project is for my embedded systems module that aims to showcase the use of 
 ## Flow chart
 
 
+<img width="190" alt="Screen Shot 2023-10-14 at 1 33 29 AM" src="https://github.com/Fatimaaax/Data_Acquisition_Over_Network_Project/assets/80466055/ad866b8a-6b13-4971-a8f4-5b29e88eb9c5">
 
-![Screenshot (3)](https://github.com/Fatimaaax/Embedded_systems_Serial_Communication_project_1/assets/80466055/76fdcedc-729f-4b41-ba90-3c2e446738fa)
-https://app.code2flow.com/qOkE86nbYnk0
+https://app.diagrams.net/ 
+
 
 
 ## Design Architecture 
