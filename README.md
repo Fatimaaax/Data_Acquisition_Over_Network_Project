@@ -5,17 +5,14 @@ This project is for my embedded systems module that aims to showcase the use of 
 
 - [Introduction](#introduction)
 - [Getting Started](#getting-started)
+- [Flowchart](#flow-chart)
+- [Design architecture](#design-architecture )
 - [Usage](#usage)
-- [Flowchart](#flowchart)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Introduction
 
-
 ## Getting Started
-
-## Usage
 
 ## Flow chart
 
@@ -25,6 +22,13 @@ This project is for my embedded systems module that aims to showcase the use of 
 https://app.code2flow.com/qOkE86nbYnk0
 
 
-## Contributing
+## Design Architecture 
 
-## License 
+
+<img width="312" alt="image" src="https://github.com/Fatimaaax/Embedded_systems_Serial_Communication_project_1/assets/80466055/f04b5720-04f8-4337-9261-5e7917dfbe8b">
+
+<img width="355" alt="image" src="https://github.com/Fatimaaax/Embedded_systems_Serial_Communication_project_1/assets/80466055/233c43ec-13ca-4a8f-be44-4d33e71edb13">
+
+## Usage
+
+
