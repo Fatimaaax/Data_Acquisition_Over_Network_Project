@@ -1,7 +1,8 @@
 #include <avr/io.h>
-#include <util/delay.h>
-#include "uart.h"
 #include <string.h>
+#include "uart.h"
+#include "dio.h"
+
 
 // Function prototypes
 void initButton();
@@ -10,11 +11,10 @@ void initLED();
 
 int main() {
     // Initialize UART communication at a specific baud rate
-    uart_init(9600);
+    
 
     // Initialize button and LED
-    initButton();
-    initLED();
+    init();
 
     char receivedChars[10];
     char charIndex = 0;
@@ -22,22 +22,13 @@ int main() {
    // **Button code**
    while (1) {
         // Check for button press
-        if ((PIND & (1 << PD2)) == 0) {
-//          for (int i = 0; i < 17; i++) {
-//            uart_transmit('\b'); // Move cursor back
-//            uart_transmit(' ');  // Overwrite with space
-//            uart_transmit('\b'); // Move cursor back again
-            /*
-           * Clear message by sending('\b') to move cursor back and space (' ') to overwrite the text
-           * the loop will run as long as i is less than 17 (total number of chars). It starts with i at 0 and increments it by 1 with each iteration.
-           */
-          //}
+        if (dio_Read('d', 2) == 0) {
           uart_print("Button is pressed\n",19);
         }
-           while ((PIND & (1 << PD2)) == 0) {
+           while (dio_Read('d', 2) == 0) {
             // do nothing
           }
-        // Send "Button is pressed" message char by char
+        // add flag vAR and ifelse condition
     
         if (uart_recieve_ready()) {
             char receivedChar = uart_recieve();
@@ -49,10 +40,10 @@ int main() {
                 */
                 if (charIndex = 6 && strncmp(receivedChars, "led on", 6) == 0) {
                     //It compares char by char then it makes PB5 "HIGH"
-                    PORTB |= (1 << PB5);
+                    dio_Set('b', 5, 1);
                 } else if (charIndex = 7 && strncmp(receivedChars, "led off", 7) == 0) {
                     //It compares char by char then it makes PB5 "LOW"
-                    PORTB &= ~(1 << PB5);
+                    dio_Set('b', 5, 0);
                 }
                 // Clear the receivedChars array for the next command
                 memset(receivedChars, 0, sizeof(receivedChars));
@@ -76,20 +67,21 @@ int main() {
  * This part is for functions responsible for initializing and controlling the button and the LED
  * placed at the end for readablility and organization purposes only.
  */
-void initButton() {
-    // Button pin as an input 
-    
-    DDRD &= ~(1 << PD2); // PD2 is connected to button
-    PORTD |= (1 << PD2);
+void init() { 
+    uart_init(9600);
+    //DDRD &= ~(1 << PD2); // PD2 is connected to button
+    dio_SetDirection('d', 2, INPUT);
+    //PORTD |= (1 << PD2);
+    dio_Set('d', 2, 1);
+    dio_SetDirection('b', 5, OUTPUT);
 }
 /*
  * FOR ME: The registers operation
  * AND operation  
  * clears (sets to 0) the bit specified by PD2 in the variable while leaving all other bits unchanged.
+  * OR operation
+ *  sets (or turns on) the bit specified by PB5 in the variable while leaving all other bits unchanged.
  */
 
 
-void initLED() {
-    // LED pin as an output
-    DDRB |= (1 << PB5); // PB5 is connected to built-in LED
-}
+
