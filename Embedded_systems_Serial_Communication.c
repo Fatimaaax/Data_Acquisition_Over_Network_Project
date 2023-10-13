@@ -20,16 +20,23 @@ int main() {
     char charIndex = 0;
     
    // **Button code**
-   while (1) {
-        // Check for button press
-        if (dio_Read('d', 2) == 0) {
-          uart_print("Button is pressed\n",19);
+ while (1) {
+    // Check for button press
+    if (dio_Read('d', 2) == 0) {
+        if (buttonPressed == 0) {
+            uart_print("Button is pressed\n", 19);
+            buttonPressed = 1; // Set the flag to 1 to indicate that the button has been pressed
         }
-           while (dio_Read('d', 2) == 0) {
-            // do nothing
-          }
-        // add flag vAR and ifelse condition
-    
+    }
+    else {
+        buttonPressed = 0; // Reset the flag when the button is not pressed
+    }
+
+/* the "Button is pressed" message will be printed only once when the button is pressed, 
+ * and the code will continue running without being blocked by the while loop. 
+ * The flag variable helps control whether the message should be printed or not.
+ */
+
         if (uart_recieve_ready()) {
             char receivedChar = uart_recieve();
             if (receivedChar == '\n') {
