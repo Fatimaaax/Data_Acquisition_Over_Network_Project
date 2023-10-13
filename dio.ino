@@ -1,5 +1,5 @@
 #include "dio.h"
-
+//Setting a general function
 int dio_Read(char port, char pin){
   if( port == 'b'){
     return PINB & (1 << pin);
@@ -11,7 +11,7 @@ int dio_Read(char port, char pin){
     return PIND & (1 << pin);
     }
  }
-
+ 
 void dio_Set(char port, char pin, char val){
   if( port == 'b'){
     if(val == 0) PORTB &= ~(1<<pin);
