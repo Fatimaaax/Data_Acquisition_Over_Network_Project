@@ -67,13 +67,7 @@ int main() {
 
     return 0;
 }
-    
-        
 
-/*
- * This part is for functions responsible for initializing and controlling the button and the LED
- * placed at the end for readablility and organization purposes only.
- */
 void init() { 
     uart_init(9600);
     //DDRD &= ~(1 << PD2); // PD2 is connected to button
@@ -82,13 +76,7 @@ void init() {
     dio_Set('d', 2, 1);
     dio_SetDirection('b', 5, OUTPUT);
 }
-/*
- * FOR ME: The registers operation
- * AND operation  
- * clears (sets to 0) the bit specified by PD2 in the variable while leaving all other bits unchanged.
-  * OR operation
- *  sets (or turns on) the bit specified by PB5 in the variable while leaving all other bits unchanged.
- */
+
 
 
 
