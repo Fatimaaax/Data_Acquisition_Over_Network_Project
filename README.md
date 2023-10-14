@@ -13,7 +13,10 @@ This project is for my embedded systems module that aims to showcase the use of 
 ## Introduction
 
 ## Video Demonstration
-[![Screen Shot](https://github.com/Fatimaaax/Data_Acquisition_Over_Network_Project/assets/80466055/c5e383c6-3587-49fb-b04b-faff813d556f)](https://youtu.be/qJUfzDOGKXY?si=1YWEO2XitU98Yn8Z) 
+<img width="447" alt="Screen Shot 2023-10-14 at 10 57 39 AM" src="https://github.com/Fatimaaax/Data_Acquisition_Over_Network_Project/assets/80466055/0de845ff-0348-4d8e-9b16-75692078fb71"> 
+
+https://youtu.be/qJUfzDOGKXY?si=1YWEO2XitU98Yn8Z 
+
  
 
 ## Flow chart
