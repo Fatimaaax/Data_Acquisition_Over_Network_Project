@@ -4,7 +4,7 @@ This project is for my embedded systems module that aims to showcase the use of 
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [Getting Started](#getting-started)
+- [Video Demo](#video-demonstration)
 - [Flowchart](#flow-chart)
 - [Design architecture](#design-architecture )
 - [Usage](#usage)
@@ -12,7 +12,9 @@ This project is for my embedded systems module that aims to showcase the use of 
 
 ## Introduction
 
-## Getting Started
+## Video Demonstration
+[![Screen Shot](https://github.com/Fatimaaax/Data_Acquisition_Over_Network_Project/assets/80466055/c5e383c6-3587-49fb-b04b-faff813d556f)](https://youtu.be/qJUfzDOGKXY?si=1YWEO2XitU98Yn8Z) 
+ 
 
 ## Flow chart
 
